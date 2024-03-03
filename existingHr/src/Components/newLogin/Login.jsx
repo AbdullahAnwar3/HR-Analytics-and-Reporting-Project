@@ -1,44 +1,44 @@
-import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom"
-import axios from 'axios';
+//importing React, some hooks for navigation etc, and axios for making HTTP requests
+import React, { useState } from 'react'; 
+import { useNavigate } from "react-router-dom"; 
+import axios from 'axios'; 
 
-import './Login.css';
-import devsinc_logo from '../Assets/Devsinc_logo.png';
-import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
-// import { employeesData } from '../../data';
+import './Login.css'; // CSS file for styling
+import devsinc_logo from '../Assets/Devsinc_logo.png'; // Company logo image
+import email_icon from '../Assets/email.png'; 
+import password_icon from '../Assets/password.png'; 
 
+// This is the Login component responsible for handling user login
 const Login = () => {
   
-  const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const navigate = useNavigate(); // We are initializing the useNavigate hook for navigation
+  // Defining states for email input, password input, and error message
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const [error, setError] = useState(''); 
 
+  // Function to handle login process
   const handleLogin = async () => {
     try {
+      // Sending login credentials to the server for verification
       const response = await axios.post("http://localhost:8000/", { email, password });
       
-      if (response.data === "exist") {
-        navigate("/EmployeePortal",{state:{id:email}})
-      } else if (response.data === "notexist") {
-        setError("Either email or password is incorrect");
-      } else {
-        console.log("Unexpected response data:", response.data);
-        setError("An error occurred while logging in");
+      // Handling response from the server
+      if (response.data === "exist") { // If login is successful
+        navigate("/EmployeePortal",{state:{id:email}}) // Navigating to EmployeePortal page with user's email ID
+      } else if (response.data === "notexist") { // If login credentials are incorrect
+        setError("Either email or password is incorrect"); // Setting error message
+      } else { // If an unexpected response is received
+        console.log("Unexpected response data:", response.data); 
+        setError("An error occurred while logging in"); 
       }
-    } catch (error) {
-      console.error("Error occurred during login:", error);
-      setError("An error occurred while logging in");
+    } catch (error) { // If an error occurs during the login process
+      console.error("Error occurred during login:", error); // Logging the error
+      setError("An error occurred while logging in"); 
     }
   };
   
-  
-  
-  
-  
-
-
+  // JSX structure for the Login component
   return (
     <div className='bodyLogin'>
       <div className="realLogo-container">
@@ -71,4 +71,11 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Login; // Exporting the Login component as default
+
+
+
+
+
+
+
