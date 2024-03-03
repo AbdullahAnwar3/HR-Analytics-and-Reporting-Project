@@ -1,4 +1,4 @@
-/* Reset default margin and padding */
+/* Resetting default margin and padding */
 .bodyLeave {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -19,44 +19,39 @@ code {
     box-sizing: border-box;
 }
 
-/* header {
-    display: flex;
-    align-items: center;
-    padding: 10px; /* Adjust the padding as needed 
-} */
 
 #companyLogo {
-    height: auto; /* Maintain aspect ratio */
-    width: 200px; /* Adjust width as needed */
+    height: auto; /
+    width: 200px; 
 }
 
 .leave-request-banner {
-    background-color: #17a59b; /* Replace with the actual color you need */
-    color: white; /* Adjust the text color as needed */
-    padding: 15px; /* Adjust the padding to increase or decrease the size of the banner */
-    text-align: center; /* Centers the text horizontally */
+    background-color: #17a59b; 
+    color: white; 
+    padding: 15px; 
+    text-align: center; 
 }
 
 .leave-request-banner h1 {
-    margin: 0; /* Removes default margin from h1 */
-    font-size: 40px; /* Adjust the font size as needed */
-    font-weight: normal; /* Adjust font weight if needed, many h1 tags are bold by default */
+    margin: 0;
+    font-size: 40px; 
+    font-weight: normal; 
 }
 
 .center-wrapper {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    width: 100%; /* Ensures the wrapper takes up full width */
+    justify-content: center; 
+    width: 100%; 
 }
 
 .content-container {
     background-color: #e5e4e8; /* Off-white color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin: 10px auto; /* Top and bottom margins, auto horizontally centers */
-    padding: 20px; /* Adjusted space inside the white box */
+    margin: 10px auto; /* Top and bottom margins
+    padding: 20px; 
     width: 600px; /* Increased width */
     max-height: 500px; /* Adjusted max-height */
-    overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
+    overflow-y: auto; 
     border-radius: 15px; /* Rounds the corners */
 }
 
@@ -64,11 +59,10 @@ code {
 
 .center-wrapper {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center; 
+    align-items: center; 
     min-height: 70vh; /* At least full viewport height */
-    width: 100%; /* Ensures the wrapper takes up full width */
-    /* Add padding-top if the header is fixed at the top */
+    width: 100%; /
 }
 
 
@@ -90,7 +84,7 @@ code {
     padding: 12px; /* Increased padding inside inputs */
     border: 1px solid #ccc; /* Border color */
     border-radius: 4px; /* Slightly rounded corners for inputs */
-    font-size: 16px; /* Increase for larger input text */
+    font-size: 16px;
     box-sizing: border-box; /* Box sizing property for proper padding calculation */
 }
 
@@ -126,29 +120,26 @@ code {
 
 #cancel:hover {
     background-color: #c1a0a5; /* Lighter shade for hover */
-    /* Optionally, you can add a transition effect */
     transition: background-color 0.3s;
 }
 
 /* Request button hover effect */
 #request:hover {
     background-color: #14887a; /* Lighter shade for hover */
-    /* Optionally, you can add a transition effect */
     transition: background-color 0.3s;
 }
 
 .site-footer {
-    background-color: #152b2d; /* The color of the footer rectangle, adjust as needed */
-    color: white; /* Text color, adjust as needed */
-    text-align: center; /* Center the text inside the footer */
-    padding: 30px 0; /* Padding inside the footer, adjust as needed */
-    position: absolute; /* Position it at the bottom */
+    background-color: #152b2d; 
+    color: white; 
+    text-align: center;
+    padding: 30px 0; 
+    position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%; /* Make it span the full width of the screen */
+    width: 100%; 
 }
 
-/* If you want the footer to always stay at the bottom even when the content is not enough to fill the screen: */
 html, body {
     height: 100%;
     margin: 0;
