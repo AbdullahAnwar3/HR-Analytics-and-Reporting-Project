@@ -1,13 +1,29 @@
-// import React, { useState, useEffect } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import devsinc_logo from '../Assets/Devsinc_logo.png';
 import './LeaveRequest.css';
-
+import { leaveRequestsData } from './index.js';
 
 function LeaveRequest() {
+    // State for managing leave requests and form inputs
+    const [requests, setRequests] = useState(leaveRequestsData);
+    const [leaveType, setLeaveType] = useState('');
+    const [date, setDate] = useState('');
+    const [about, setAbout] = useState('');
+
+    // Add a new leave request
+    const handleRequest = (e) => {
+        e.preventDefault();
+        const newRequest = { employeeId: requests.length + 1, leaveType, date, message: about, fileAttachment: 'dummy-file.jpg' };
+        setRequests([...requests, newRequest]);
+        // Reset form fields
+        setLeaveType('');
+        setDate('');
+        setAbout('');
+    };
+
     return (
         <>
-            <div className ='bodyLeave'>
+            <div className="bodyLeave">
                 <div className="realLogo-container">
                     <img src={devsinc_logo} alt="Company Logo" className="realLogo" />
                 </div>
@@ -18,10 +34,11 @@ function LeaveRequest() {
 
                 <div className="center-wrapper">
                     <div className="content-container">
-                        <form id="leaveRequestForm">
+                        <form onSubmit={handleRequest}>
+                            {/* Leave request form fields */}
                             <div className="form-group">
                                 <label htmlFor="leaveType">Leave Type</label>
-                                <select id="leaveType" name="leaveType">
+                                <select id="leaveType" value={leaveType} onChange={(e) => setLeaveType(e.target.value)}>
                                     <option value="sick">Sick Leave</option>
                                     <option value="annual">Annual Leave</option>
                                     <option value="other">Other</option>
@@ -30,17 +47,12 @@ function LeaveRequest() {
 
                             <div className="form-group">
                                 <label htmlFor="date">Date</label>
-                                <input type="date" id="date" name="date" />
+                                <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="about">About</label>
-                                <textarea id="about" name="about" rows="4" placeholder="About..."></textarea>
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="attachments">Attachments</label>
-                                <input type="file" id="attachments" name="attachments" multiple />
+                                <textarea id="about" rows="4" placeholder="About..." value={about} onChange={(e) => setAbout(e.target.value)}></textarea>
                             </div>
 
                             <div className="form-actions">
@@ -50,9 +62,6 @@ function LeaveRequest() {
                         </form>
                     </div>
                 </div>
-
-                {/* <footer className="site-footer">
-                </footer> */}
             </div>
         </>
     );
