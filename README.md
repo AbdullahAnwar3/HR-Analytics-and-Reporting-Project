@@ -1,4 +1,4 @@
-itle: HR Analytics and Reporting Web Application
+Title: HR Analytics and Reporting Web Application
 
 Overview:
 This web application is designed to facilitate Human Resources (HR) management by providing analytics and reporting functionalities. It consists of two sides: the employee side and the admin side. The backend is powered by Node.js with MongoDB as the database, while the frontend is built using React.js.
