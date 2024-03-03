@@ -10,12 +10,12 @@ function LeaveRequest() {
     const [date, setDate] = useState('');
     const [about, setAbout] = useState('');
 
-    // Add a new leave request
+    // Adding a new leave request
     const handleRequest = (e) => {
         e.preventDefault();
         const newRequest = { employeeId: requests.length + 1, leaveType, date, message: about, fileAttachment: 'dummy-file.jpg' };
         setRequests([...requests, newRequest]);
-        // Reset form fields
+        // Resetting form fields
         setLeaveType('');
         setDate('');
         setAbout('');
