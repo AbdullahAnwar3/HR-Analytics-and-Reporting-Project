@@ -32,3 +32,36 @@ Database Structure:
       "date": "2019-04-11"
     }
     ```
+
+--> Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/AbdullahAnwar3/HR-Analytics-and-Reporting-Project.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd HR-Analytics-and-Reporting-Project
+   ```
+
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+4. Start the backend server:
+   ```
+   node app.js
+   ```
+
+5. Start the frontend development server:
+   ```
+   npm start
+   ```
+
+6. Access the application in your browser at `http://localhost:3000`.
+
+
