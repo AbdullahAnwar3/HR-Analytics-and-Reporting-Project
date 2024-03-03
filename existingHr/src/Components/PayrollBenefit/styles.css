@@ -1,20 +1,24 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Header styles */
 header {
     display: flex;
     align-items: center;
     padding: 1vw;
 }
 
+/* Company logo styles */
 #companyLogo {
     height: auto;
-    width: 10vw; /* Example conversion to viewport width */
+    width: 10vw; 
 }
 
+/* Banner styles */
 .leave-request-banner {
     background-color: #41a49a;
     color: white;
@@ -28,6 +32,7 @@ header {
     font-weight: normal;
 }
 
+/* Center wrapper styles */
 .center-wrapper {
     display: flex;
     justify-content: center;
@@ -36,6 +41,7 @@ header {
     width: 100%;
 }
 
+/* Content container styles */
 .content-container {
     background-color: #dcdce0;
     box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.1);
@@ -48,23 +54,24 @@ header {
 }
 
 .content-container:hover {
-    background-color: #ffffff; /* Slightly lighter on hover, adjust color as desired */
+    background-color: #ffffff; /* Slightly lighter on hover */
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.15); /* Larger shadow on hover for a "lifted" effect */
-    /* Other properties like border or scale can be added here for different effects */
 }
 
-
+/* Employee details styles */
 .employee-details p {
     font-size: 2vw;
     margin-bottom: 1vw;
     line-height: 1.6;
 }
 
+/* Lower border styles */
 .lower-border {
     height: 0.5vw;
     background-color: #062530;
 }
 
+/* Footer border styles */
 .footer-border {
     background-color: #152b2d;
     color: white;
@@ -76,6 +83,7 @@ header {
     width: 100%;
 }
 
+/* Body and HTML styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -86,10 +94,12 @@ body {
     flex-direction: column;
 }
 
+/* Content styles */
 .content {
     flex: 1 0 auto;
 }
 
+/* Footer border styles */
 .footer-border {
     flex-shrink: 0;
 }
