@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/HR-Analytics-and-Reporting-Project/static/css/main.2bd279a6.chunk.css",
+    "main.js": "/HR-Analytics-and-Reporting-Project/static/js/main.3c643cc7.chunk.js",
+    "main.js.map": "/HR-Analytics-and-Reporting-Project/static/js/main.3c643cc7.chunk.js.map",
+    "runtime~main.js": "/HR-Analytics-and-Reporting-Project/static/js/runtime~main.2883814b.js",
+    "runtime~main.js.map": "/HR-Analytics-and-Reporting-Project/static/js/runtime~main.2883814b.js.map",
+    "static/js/2.6c320300.chunk.js": "/HR-Analytics-and-Reporting-Project/static/js/2.6c320300.chunk.js",
+    "static/js/2.6c320300.chunk.js.map": "/HR-Analytics-and-Reporting-Project/static/js/2.6c320300.chunk.js.map",
+    "static/js/3.62d5139d.chunk.js": "/HR-Analytics-and-Reporting-Project/static/js/3.62d5139d.chunk.js",
+    "static/js/3.62d5139d.chunk.js.map": "/HR-Analytics-and-Reporting-Project/static/js/3.62d5139d.chunk.js.map",
+    "index.html": "/HR-Analytics-and-Reporting-Project/index.html",
+    "precache-manifest.861af6f8042670faf90e5797c5374fa1.js": "/HR-Analytics-and-Reporting-Project/precache-manifest.861af6f8042670faf90e5797c5374fa1.js",
+    "service-worker.js": "/HR-Analytics-and-Reporting-Project/service-worker.js",
+    "static/css/main.2bd279a6.chunk.css.map": "/HR-Analytics-and-Reporting-Project/static/css/main.2bd279a6.chunk.css.map",
+    "static/media/Devsinc_logo.png": "/HR-Analytics-and-Reporting-Project/static/media/Devsinc_logo.326e6a11.png"
+  }
+}
