@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);
+
+*{
+    font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/*----------cover----------*/
+
+.cover{
+    background-color: inherit;
+    height: 50vh;
+}
+
+/*----------Collection----------*/
+
+.scrolling-wrapper{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  background-color: inherit;
+}
+
+.tile-admin, .tile-emp{
+	margin: 10px;
+ 	padding: 10px;
+	border-radius: 5px;
+
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+
+	box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+	background-color: #fafafa;
+}
+
+.tile-admin:hover, .tile-emp:hover{
+    background-color: white;
+}
+
+.tile-admin img, .tile-emp img{
+	height: 10.6em;
+	width: 10.6em;
+	margin: 10px;
+	filter: grayscale(40%);
+}
+
+/*----------Button----------*/
+
+.form_btn{
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1d578a;
+    font-size: medium;
+    font-weight: 600;
+	color: white;
+    background-color: #1d578a;
+    border: 2px solid #1d578a;
+	border-radius: 3px;
+	margin: 10px;
+	height: 40px;
+	width: 90%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.form_btn:hover{
+	color: #1d578a;
+    background: transparent;   
+}

@@ -1,0 +1,204 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);
+
+*{
+    font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.signup-form-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 238, 238);
+    margin: auto;
+    padding: 40px 10px;
+}
+
+.signup-form{
+    margin: 10px;
+    padding: 20px;
+    border-radius: 7px;
+    background-color: white;
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-rows: 0.8fr 0.9fr 0.9fr 0.9fr;
+    grid-template-areas: "signup-title signup-title" 
+                         "signup-email signup-salary" 
+                         "signup-fname signup-lname" 
+                         "signup-occupation signup-submit";
+}
+
+.signup-heading{
+    font-size: x-large;
+    color: #3c5267;
+    text-align: center;
+    width: 100%;
+} 
+
+.question-icon{
+    color: inherit;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    margin: auto 5px 0 7px;
+}
+
+.signup-form-unit{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 0 16px 0;
+    padding: 0;
+    height: 91.2px;
+}
+
+label{
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-family: sans-serif, 'Ubuntu', Verdana, Geneva, Tahoma;
+    font-weight: bold;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.form-required{
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.signup-form input{
+    margin: 0;
+    padding: 0 10px;
+    width: 250px;
+	height: 40px;
+    box-sizing: border-box;
+	border-radius: 3px;
+    border: 1px solid #cbd6e2;
+    background-color: white;
+    color: #333333;
+    cursor: text;
+}
+
+.signup-form input[type=email]:focus, .signup-form input[type=password]:focus, .signup-form input[type=text]:focus{
+    border-color: rgba(82, 168, 236, 0.8) ;
+    outline: none;
+}
+
+.radio-wrapper, .radio-error{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 250px;
+    height: 40px;
+}
+
+.radio-option, .radio-option-selected, .radio-option-error{
+    margin: 0;
+    padding: 0 10px;
+    height: 100%;
+    width: 49%;
+    border-radius: 3px;
+    border: 1px solid #cbd6e2;
+    background-color: inherit;
+    color: #333333;
+    font-weight: 600;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.radio-option-selected{
+    background-color: #cbd6e2;
+}
+
+.radio-option-error{
+    border: 1px solid #D63301;
+    background-color: #edcaca;;
+}
+
+.radio-option-selected:hover, .radio-option:hover, .radio-option-error:hover{
+    border-color: rgba(82, 168, 236, 0.8) ;
+}
+
+.signup-btn-submit{
+    font-size: medium;
+    font-weight: 600;
+	color: white;
+    background-color: #0C3A53;
+    border: 2px solid #0C3A53;
+	border-radius: 3px;
+    /* margin: 8px 0 16px 0; */
+    margin: 25.8px 0 16px 0;
+    padding: 0 10px;
+    width: 250px;
+	height: 40px;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.signup-btn-submit:hover{
+	background-color: #0EBAB1;
+    border: 2px solid #0EBAB1;
+}
+
+.error-text{
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #D63301;
+}
+
+.field-error{
+    border: 1px solid #D63301 !important;
+}
+
+/*----------Making Signup Page responive----------*/
+
+.signup-title{
+    grid-area: signup-title;
+}
+
+.signup-email{
+    grid-area: signup-email;
+}
+
+.signup-fname{
+    grid-area: signup-fname;
+}
+
+.signup-lname{
+    grid-area: signup-lname;
+}
+
+.signup-salary{
+    grid-area: signup-salary;
+}
+
+.signup-occupation{
+    grid-area: signup-occupation;
+}
+
+.signup-submit{
+    grid-area: signup-submit;
+}
+
+@media only screen and (max-width: 600px){
+    .signup-form{
+        background-color: white;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .signup-form-unit{
+        margin: 0 0 8px 0;
+    }
+
+    .signup-btn-submit{
+        margin: 0px 0 16px 0;
+    }
+    
+
+}
