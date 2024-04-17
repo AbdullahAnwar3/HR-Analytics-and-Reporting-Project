@@ -2,7 +2,7 @@ const Survey = require('../models/surveysData');
 const mongoose = require('mongoose');
 
 // Importing socket.io object
-const main = require('../server');
+const main = require('../index');
 
 // GET all surveys
 const getSurveys = async (req, res) => {
