@@ -117,7 +117,7 @@ const Login = (prop)=>{
         setGenderErrorClass('radio-option');
         setResidenceError('')
 
-        const result = await fetch('/api/signup', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/signup', {
             method: 'PATCH',
             body: JSON.stringify({fname, lname, dob, gender, residence}),
             headers: {
@@ -175,7 +175,7 @@ const Login = (prop)=>{
     
         setIsLoading(true);
 
-        const result = await fetch('/api/login/', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/login/', {
             method: 'POST',
             body: JSON.stringify({email, password}),
             headers: {
