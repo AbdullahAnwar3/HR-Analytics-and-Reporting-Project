@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 
 //Importing socket.io
 import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
+const socket = io('https://hr-analytics-and-reporting-project.vercel.app/',{
     reconnection: true
 })
 
