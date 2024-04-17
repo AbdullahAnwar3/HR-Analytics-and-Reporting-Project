@@ -56,7 +56,7 @@ const ManageLeave = (prop)=>{
 
     const fetchFilteredLeave = async (LeaveFilter) => {
         setFetching(true);
-        const result = await fetch('/api/leave/', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/', {
             method: 'POST',
             body: JSON.stringify({...LeaveFilter}),
             headers: {
@@ -86,7 +86,7 @@ const ManageLeave = (prop)=>{
         
         const fetchDefault = async (defaultFilter) => {
             setFetching(true);
-            const result = await fetch('/api/leave/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/', {
                 method: 'POST',
                 body: JSON.stringify({...defaultFilter}),
                 headers: {
@@ -196,7 +196,7 @@ const ManageLeave = (prop)=>{
             return;
         }
 
-        const result = await fetch('/api/leave/email', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/email', {
             method: 'POST',
             body: JSON.stringify({email : inputText}),
             headers: {
@@ -285,7 +285,7 @@ const ManageLeave = (prop)=>{
 
         if (cancelOperation) {return;}
 
-        const result = await fetch('/api/leave/' + id, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/' + id, {
             method: 'PATCH',
             body: JSON.stringify({standing : leaveStatus}),
             headers: {
