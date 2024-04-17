@@ -102,8 +102,8 @@ io.on('connection', (socket) => {
 })
 
 exports.io = io
-mongodb+srv://HR-Admin:J3xFNzZt2ZeZxiFY@hr-analytics.ar4bs5x.mongodb.net/
-mongoose.connect(process.env.MONG_URI)
+// mongodb+srv://HR-Admin:J3xFNzZt2ZeZxiFY@hr-analytics.ar4bs5x.mongodb.net/
+// mongoose.connect(process.env.MONG_URI)
 mongoose.connect('mongodb+srv://HR-Admin:J3xFNzZt2ZeZxiFY@hr-analytics.ar4bs5x.mongodb.net/')
 .then(()=>{
     server.listen(process.env.PORT, ()=>{
