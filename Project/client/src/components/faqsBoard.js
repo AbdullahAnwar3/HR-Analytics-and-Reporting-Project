@@ -19,7 +19,7 @@ import LoadingIcon from "./SharedComponents/loading";
 
 //Importing socket.io
 import {io} from 'socket.io-client';
-const socket = io('/',{
+const socket = io('https://hr-analytics-and-reporting-project.vercel.app/',{
     reconnection: true
 })
 
@@ -38,7 +38,7 @@ const FaqsBoard = (prop)=>{
         setFetching(true);
 
         const fetchFaqs = async () => {
-            const result = await fetch('/api/faqs/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/faqs/', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
