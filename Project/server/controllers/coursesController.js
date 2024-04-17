@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const urlValidation  = require('url-validation');
 
 // Importing socket.io object
-const main = require('../server');
+const main = require('../index');
 
 // GET all courses
 const getAllCourses = async (req, res) => {
