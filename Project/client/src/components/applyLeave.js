@@ -117,7 +117,7 @@ const ApplyLeave = (prop)=>{
         setFetching(true);
 
         const fetchLeave = async () => {
-            const result = await fetch('/api/leave/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -164,7 +164,7 @@ const ApplyLeave = (prop)=>{
 
         const newLeave = {startDate, endDate, description, attachment};
 
-        const result = await fetch('/api/leave/add', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/leave/add', {
             method: 'POST',
             body: JSON.stringify(newLeave),
             headers: {
