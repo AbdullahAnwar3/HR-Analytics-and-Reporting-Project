@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 
 //Importing socket.io
 import {io} from 'socket.io-client';
-const socket = io('/',{
+const socket = io('/https://hr-analytics-and-reporting-project.vercel.app',{
     reconnection: true
 })
 
@@ -55,7 +55,7 @@ const Surveys = (prop)=>{
     useEffect(() => {
         const fetchSurveys = async () => {
             setFetching(true);
-            const result = await fetch('/api/survey/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -161,7 +161,7 @@ const Surveys = (prop)=>{
 
         const newSurvey = {title, description};
 
-        const result = await fetch('/api/survey/', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/', {
             method: 'POST',
             body: JSON.stringify(newSurvey),
             headers: {
@@ -226,7 +226,7 @@ const Surveys = (prop)=>{
 
         if (cancelOperation) {return;}
 
-        const result = await fetch('/api/survey/' + id, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/' + id, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${userAccount.userToken}`
@@ -273,7 +273,7 @@ const Surveys = (prop)=>{
 
         if (cancelOperation) {return;}
 
-        const result = await fetch('/api/survey/' + id, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/' + id, {
             method: 'PATCH',
             body: JSON.stringify({visibility : 'true'}),
             headers: {
@@ -322,7 +322,7 @@ const Surveys = (prop)=>{
 
         if (cancelOperation) {return;}
 
-        const result = await fetch('/api/survey/' + id, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/' + id, {
             method: 'PATCH',
             body: JSON.stringify({visibility : 'false'}),
             headers: {
@@ -394,7 +394,7 @@ const Surveys = (prop)=>{
             return;
         }
 
-        const result = await fetch('/api/survey/comment/' + surveyId, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/survey/comment/' + surveyId, {
             method: 'PATCH',
             body: JSON.stringify({response: comment}),
             headers: {
