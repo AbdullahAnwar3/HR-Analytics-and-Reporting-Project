@@ -159,7 +159,7 @@ const MyAccount = (prop)=>{
         if(genderNew && genderNew !== gender){updateList.gender=genderNew}
         if(residenceNew && residenceNew !== residence){updateList.residence=residenceNew}
 
-        const result = await fetch('/api/account/info', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/info', {
             method: 'PATCH',
             body: JSON.stringify({...updateList}),
             headers: {
@@ -314,7 +314,7 @@ const MyAccount = (prop)=>{
         setNewPassword1Error('');
         setNewPassword2Error('');
 
-        const result = await fetch('/api/account/password', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/password', {
             method: 'PATCH',
             body: JSON.stringify({oldPassword, newPassword1, newPassword2}),
             headers: {
@@ -361,7 +361,7 @@ const MyAccount = (prop)=>{
     // Use effect hook only run once initially when the page in rendered.
     useEffect(() => {
         const fetchProfile = async () => {
-            const result = await fetch('/api/account/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -419,7 +419,7 @@ const MyAccount = (prop)=>{
 
         setPhotoUploading(true);
 
-        const result = await fetch('/api/account/photo', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/photo', {
             method: 'PATCH',
             body: JSON.stringify({photo : ''}),
             headers: {
@@ -478,7 +478,7 @@ const MyAccount = (prop)=>{
             else
             {
                 const base64 = await convertToBase64(e.target.files[0]);
-                const result = await fetch('/api/account/photo', {
+                const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/photo', {
                     method: 'PATCH',
                     body: JSON.stringify({photo : base64}),
                     headers: {
