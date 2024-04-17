@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 // The following function creates jwt for login and signup
 const generateTokens = (email) => {
     // Method below generated a token. First argument : payload, Second argument : secret key, Third argument : options 
-    return jwt.sign({email}, process.env.SYM_KEY, {expiresIn: '3d'})
+    return jwt.sign({email}, 'travERnfeRTHAmpoRSOL', {expiresIn: '3d'})
     // Once created 3 dots seperate the Header, Payload and Signature
 }
 
