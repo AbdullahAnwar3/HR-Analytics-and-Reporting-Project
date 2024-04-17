@@ -14,7 +14,7 @@ const surveySchema = new Schema({
         type: [String]
     },
     visibility: {
-        type: Boolean,
+        type: String,
         require: true
     }
 }, {timestamps : true});

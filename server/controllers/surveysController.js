@@ -4,25 +4,14 @@ const mongoose = require('mongoose');
 // Importing socket.io object
 const main = require('../server');
 
-// GET all surveys for admin
-const getSurveysAdmin = async (req, res) => {
+// GET all surveys
+const getSurveys = async (req, res) => {
     try{
         const surveys = await Survey.find({}).sort({createdAt: -1});
         res.status(200).json(surveys);
     }
     catch (error){
         res.status(400).json({error : 'Error occured while fetching all surveys for admin'});
-    }
-};
-
-// GET surveys for employee
-const getSurveysEmployee = async (req, res) => {
-    try{
-        const surveys = await Survey.find({visibility : true}).sort({createdAt: -1});
-        res.status(200).json(surveys);
-    }
-    catch (error){
-        res.status(400).json({error : 'Error occured while fetching surveys for employee'});
     }
 };
 
@@ -44,13 +33,11 @@ const addSurvey = async (req, res) => {
     }
 
     try{
-        const survey = await Survey.create({title, description, visibility : true});
+        const survey = await Survey.create({title, description, visibility : 'true'});
 
         try{
-            const surveysAdmin = await Survey.find({}).sort({createdAt: -1});
-            const surveysEmployee = await Survey.find({visibility : true}).sort({createdAt: -1});
-            main.io.emit('admin-survey', surveysAdmin);
-            main.io.emit('employee-survey', surveysEmployee);
+            const allSurveys = await Survey.find({}).sort({createdAt: -1});
+            main.io.emit('surveys-update', allSurveys);
         }
         catch (error){
             return res.status(400).json({error : 'Survey added but socket error occured'});
@@ -66,6 +53,7 @@ const addSurvey = async (req, res) => {
 // Add comment
 const addComment = async (req, res) => {
     try{
+        console.log('here')
         const {id} = req.params;
         const {email} = req.email;
         const {response} = req.body;
@@ -77,7 +65,7 @@ const addComment = async (req, res) => {
         let errorFields = [];
         if(!response){
             errorFields.push('Response');
-            return res.status(400).json({error : 'Please fill out the answer field', errorFields});
+            return res.status(400).json({error : 'Please fill out the comment field', errorFields});
         }
 
         let response_append = email + ';' + response;
@@ -86,10 +74,8 @@ const addComment = async (req, res) => {
         if (survey)
         {
             try{
-                const surveysAdmin = await Survey.find({}).sort({createdAt: -1});
-                const surveysEmployee = await Survey.find({visibility : true}).sort({createdAt: -1});
-                main.io.emit('admin-survey', surveysAdmin);
-                main.io.emit('employee-survey', surveysEmployee);
+                const allSurveys = await Survey.find({}).sort({createdAt: -1});
+                main.io.emit('surveys-update', allSurveys);
             }
             catch (error){
                 return res.status(400).json({error : 'Comment added but socket error occured'});
@@ -118,10 +104,9 @@ const deleteSurvey = async (req, res) => {
         if (survey)
         {
             try{
-                const surveysAdmin = await Survey.find({}).sort({createdAt: -1});
-                const surveysEmployee = await Survey.find({visibility : true}).sort({createdAt: -1});
-                main.io.emit('admin-survey', surveysAdmin);
-                main.io.emit('employee-survey', surveysEmployee);
+
+                const allSurveys = await Survey.find({}).sort({createdAt: -1});
+                main.io.emit('surveys-update', allSurveys);
             }
             catch (error){
                 return res.status(400).json({error : 'Survey deleted but socket error occured', errorFields});
@@ -150,10 +135,8 @@ const surveyVisibility = async (req, res) => {
         if (survey)
         {
             try{
-                const surveysAdmin = await Survey.find({}).sort({createdAt: -1});
-                const surveysEmployee = await Survey.find({visibility : true}).sort({createdAt: -1});
-                main.io.emit('admin-survey', surveysAdmin);
-                main.io.emit('employee-survey', surveysEmployee);
+                const allSurveys = await Survey.find({}).sort({createdAt: -1});
+                main.io.emit('surveys-update', allSurveys);
             }
             catch (error){
                 return res.status(400).json({error : 'Survey updated but socket error occured', errorFields});
@@ -170,8 +153,7 @@ const surveyVisibility = async (req, res) => {
 };
 
 module.exports = {
-    getSurveysAdmin,
-    getSurveysEmployee,
+    getSurveys,
     addSurvey,
     addComment,
     deleteSurvey,

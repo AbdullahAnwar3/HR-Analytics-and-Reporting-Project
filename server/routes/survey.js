@@ -1,7 +1,6 @@
 const express = require('express');
 const {
-    getSurveysAdmin,
-    getSurveysEmployee,
+    getSurveys,
     addSurvey,
     addComment,
     deleteSurvey,
@@ -14,11 +13,8 @@ const authenticateRequest = require('../middleware/authorize');
 // JSON WEB TOKEN validation. If valid only then subsequent routes are invoked and access to controller functions is granted.
 router.use(authenticateRequest);
 
-// GET all surveys for admin
-router.get('/', getSurveysAdmin);
-
-// GET all surveys for employee
-router.get('/employee', getSurveysEmployee);
+// GET all surveys
+router.get('/', getSurveys);
 
 // POST a new survey
 router.post('/', addSurvey);

@@ -73,6 +73,7 @@ const faqRoutes = require('./routes/faqs.js');
 const leaveRoutes = require('./routes/leave.js');
 const accountRoutes = require('./routes/account.js');
 const surveyRoutes = require('./routes/survey.js');
+const analyticRoutes = require('./routes/analytic.js');
 
 // Middleware to log API route and method
 app.use((req,res,next) => {
@@ -88,6 +89,7 @@ app.use('/api/faqs', faqRoutes);
 app.use('/api/leave', leaveRoutes);
 app.use('/api/account', accountRoutes);
 app.use('/api/survey', surveyRoutes);
+app.use('/api/analytics/', analyticRoutes);
 
 io.on('connection', (socket) => {
     console.log('a user connected to a socket driven page', socket.id)
