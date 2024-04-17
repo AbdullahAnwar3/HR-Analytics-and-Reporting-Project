@@ -47,20 +47,18 @@
 
 /****************************************************Using WebSocket.io***********************************************/
 
-./api/server.js
-var cors = require('cors')
-app.use(cors({
-
-    origin:['https://deploy-mern-1whq.vercel.app"],
-    methods:["POST", "GET", "DELETE", "PATCH"]
-    credentials: true
-}));
-
-app.use(cors())
+const cors = require('cors')
 
 require('dotenv').config();
 const express = require('express');
 const app = express();
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 // Moongoose allows for schema creation. MongoDB alone is schema less.
 const mongoose = require('mongoose');
