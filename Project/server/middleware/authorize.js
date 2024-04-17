@@ -17,8 +17,9 @@ const authenticateRequest = async (req, res, next) => {
     // String with a single space with second substring being the actual token.
 
     try{
+        
         let jsonToken = authorization.split(' ')[1];
-        const {email} = jwt.verify(jsonToken, process.env.SYM_KEY);
+        const {email} = jwt.verify(jsonToken, 'travERnfeRTHAmpoRSOL');
 
         // Now attaching this _id to req object so that it is avaiable for subsequent API calls
         req.email = await User.findOne({email}).select('email');
