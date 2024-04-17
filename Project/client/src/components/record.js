@@ -183,7 +183,7 @@ const Record = (props)=>{
     // Use effect hook only run once initially when the page in rendered.
     useEffect(() => {
         const fetchProfile = async () => {
-            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account//profile', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/profile', {
                 method: 'POST',
                 body: JSON.stringify({email : employeeEmail}),
                 headers: {
