@@ -47,8 +47,16 @@
 
 /****************************************************Using WebSocket.io***********************************************/
 
-// import cors from 'cors'
-// app.use(cors());
+
+var cors = require('cors')
+app.use(cors({
+
+    origin:['https://deploy-mern-1whq.vercel.app"],
+    methods:["POST", "GET", "DELETE", "PATCH"]
+    credentials: true
+}));
+
+app.use(cors())
 
 require('dotenv').config();
 const express = require('express');
