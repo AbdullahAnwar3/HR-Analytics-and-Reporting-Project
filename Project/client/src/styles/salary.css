@@ -1,0 +1,146 @@
+
+
+.title-container {
+    text-align: center; 
+    margin: 20px 0; 
+  }
+  
+  .data-dashboard-container {
+    /* display: inline-block; 
+    background-color: #3aa1a1; 
+    border-radius: 10px; 
+    padding: 10px 20px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: white;  */
+    margin-top: 5%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    gap: 1%;
+
+
+  }
+
+  .data-dashboard-text {
+    font-size: 2.1rem;
+    color: #003f42;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+  }
+
+  .dashBoardImage {
+    width: 3%;
+  }
+  
+
+  
+
+  .chart-title-bar {
+    background-color: #003f42;  /* Dark green background */
+    color: white;               /* White text color */
+    text-align: center;         /* Center the text horizontally */
+    padding: 20px 0;            /* Padding of 20px to top and bottom, 0 to left and right */
+    font-size: 17px;            /* Custom font size for the text */
+    font-weight: bold;          /* Makes the text bold */
+    font-family: 'Arial', sans-serif; /* Sets the font family */
+    letter-spacing: 3px;        /* Increases spacing between letters */
+    width: 100%;                /* Full width of the container */
+    border-radius: 5px;         /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 4px rgba(233, 116, 214, 0.1); /* Subtle shadow for depth */
+    margin-bottom: -120px;        /* Space below the title bar */
+}
+
+.chart-border {
+    border: 1px solid #110101;
+    border-radius: 3px;
+    width: 100%; 
+    margin: 0 auto; 
+    height: auto; 
+    transition: all 0.2s ease-in-out;
+    padding: 15px;
+}
+
+
+.chart-border:hover {
+    border-color: #042c38; 
+    box-shadow: 0 0 8px rgba(4, 44, 56, 0.5); 
+}
+
+
+.chart-title-bar {
+    height: 37px; 
+}
+
+
+
+
+.age-title-bar {
+    background-color: #003d42;  
+    color: white;               
+    padding: 20px 0;            
+    text-align: center;         
+    margin-top: 30px;           
+    margin-bottom: 30px; 
+    font-size: 17px;            
+    font-weight: bold;          
+    font-family: 'Arial', sans-serif; 
+    letter-spacing: 3px;
+    border-radius: 5px;        
+}
+
+.chart-border {
+    border: 1px solid #080505;     
+    padding: 15px;              
+    margin-bottom: 20px;        
+}
+
+.gender-title-bar {
+    background-color: #003d42;  
+    color: white;               
+    padding: 20px 0;            
+    text-align: center;         
+    margin-top: 30px;           
+    margin-bottom: 30px; 
+    font-size: 17px;            
+    font-weight: bold;          
+    font-family: 'Arial', sans-serif; 
+    letter-spacing: 3px;
+    border-radius: 5px;        
+}
+
+
+.residence-title-bar {
+    background-color: #003d42;  
+    color: white;               
+    padding: 20px 0;            
+    text-align: center;         
+    margin-top: 30px;           
+    margin-bottom: 30px; 
+    font-size: 17px;            
+    font-weight: bold;          
+    font-family: 'Arial', sans-serif; 
+    letter-spacing: 3px;
+    border-radius: 5px;        
+}
+
+.reload-text {
+    position: absolute; 
+    top: 9%; 
+    right: 20px; 
+    padding: 5px 10px; 
+    border: 1px solid #003f42; 
+    cursor: pointer; 
+    z-index: 10; /* Make sure it's above other items */
+    border-radius: 6px; /* Slightly rounded corners for aesthetics */
+    font-size: 1.6em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #003f42;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: border 0.08s ease-in-out, color 0.08s ease-in-out; /* Smooth transition for border and color */
+}
+
+.reload-text:hover {
+    border: 1.5px solid #003f42; /* Changes the border thickness on hover */
+}
