@@ -23,7 +23,7 @@ import Swal from "sweetalert2";
 
 //Importing socket.io
 import {io} from 'socket.io-client';
-const socket = io('/',{
+const socket = io('https://hr-analytics-and-reporting-project.vercel.app/',{
     reconnection: true
 })
 
@@ -49,7 +49,7 @@ const FaqsManage = (prop)=>{
         const fetchFaqs = async () => {
             setFetching(true);
 
-            const result = await fetch('/api/faqs/', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/faqs/', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -110,7 +110,7 @@ const FaqsManage = (prop)=>{
 
         const newFaq = {question, answer};
 
-        const result = await fetch('/api/faqs/', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/faqs/', {
             method: 'POST',
             body: JSON.stringify(newFaq),
             headers: {
@@ -174,7 +174,7 @@ const FaqsManage = (prop)=>{
 
         if (cancelOperation) {return;}
 
-        const result = await fetch('/api/faqs/' + id, {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/faqs/' + id, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${userAccount.userToken}`
