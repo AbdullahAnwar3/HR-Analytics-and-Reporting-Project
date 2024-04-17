@@ -31,7 +31,7 @@ const Analytics = (prop)=>{
     useEffect(() => {
       const fetchGenderData = async () => {
         
-          const response = await fetch('/api/analytics/gender', {
+          const response = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/analytics/gender', {
             headers: {
                 'Authorization': `Bearer ${userAccount.userToken}`
             }
@@ -61,7 +61,7 @@ const Analytics = (prop)=>{
       };
       const fetchResidenceData = async () => {
         try {
-            const response = await fetch('/api/analytics/residence', {
+            const response = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/analytics/residence', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -90,7 +90,7 @@ const Analytics = (prop)=>{
 
       
         const fetchSalary = async () => {
-            const result = await fetch('/api/analytics/salary', {
+            const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/analytics/salary', {
                 headers: {
                     'Authorization': `Bearer ${userAccount.userToken}`
                 }
@@ -109,7 +109,7 @@ const Analytics = (prop)=>{
         }
         const fetchAgeData = async () => {
           try {
-            const response = await fetch('/api/analytics/age', {
+            const response = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/analytics/age', {
               headers: {
                 'Authorization': `Bearer ${userAccount.userToken}`
               }
