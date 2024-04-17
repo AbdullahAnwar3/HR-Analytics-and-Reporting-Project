@@ -55,7 +55,7 @@ const app = express();
 app.use(cors(
     {
         // origin: ["https://hr-analytics-and-reporting-project-frontend.vercel.app"],
-        methods: ["POST", "GET"],
+        methods: ["POST", "GET", "PATCH", "DELETE"],
         credentials: true
     }
 ));
