@@ -97,7 +97,7 @@ const SignUp = (prop)=>{
         setOccupationErrorClass('radio-option');
         setDepartmentError('');
 
-        const result = await fetch('/api/signup', {
+        const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/signup', {
             method: 'POST',
             body: JSON.stringify({email, salary, occupation, department}),
             headers: {
