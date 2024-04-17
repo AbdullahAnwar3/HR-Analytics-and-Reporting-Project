@@ -102,11 +102,11 @@ io.on('connection', (socket) => {
 })
 
 exports.io = io
-
+const PORT = 3000;
 // mongoose.connect(process.env.MONG_URI)
 mongoose.connect('mongodb+srv://HR-Admin:J3xFNzZt2ZeZxiFY@hr-analytics.ar4bs5x.mongodb.net/').then(()=>{
-    server.listen(process.env.PORT, ()=>{
-    console.log(`listening on port ${process.env.PORT}`);
+    server.listen(PORT, ()=>{
+    console.log('listening on port 3000');
     console.log("Connected to Database");
 })})
 .catch((error)=>{
