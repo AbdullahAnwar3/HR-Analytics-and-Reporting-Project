@@ -84,7 +84,6 @@ const analyticRoutes = require('./routes/analytic.js');
 // Middleware to log API route and method
 app.use((req,res,next) => {
     console.log(req.path, req.method);
-    res.json("hello");
     next();
 })
 
