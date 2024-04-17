@@ -2,7 +2,7 @@ const Faqs = require('../models/faqsData');
 const mongoose = require('mongoose');
 
 // Importing socket.io object
-const main = require('../server');
+const main = require('../index');
 
 // GET all faqs
 const getAllFaqs = async (req, res) => {
