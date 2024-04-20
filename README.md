@@ -27,6 +27,8 @@ HR Admin Homepage: Customized for HR administrators to oversee and manage HR fun
 
 Responsive Navigation: Slide through navigation buttons to swiftly access various admin features.
 
+HR Analytics: Visualize employee data with interactive charts such as salary ranges, age distributions, and more.
+
 Leave Request Management: Review and manage employee leave requests with the ability to accept, reject, or mark as pending.
 
 Survey Management: Create and distribute surveys with mandatory fields, and review employee responses in real time.
