@@ -27,6 +27,8 @@ HR Admin Homepage: Customized for HR administrators to oversee and manage HR fun
 
 Responsive Navigation: Slide through navigation buttons to swiftly access various admin features.
 
+My Account: - You can view your own details.
+
 HR Analytics: Visualize employee data with interactive charts such as salary ranges, age distributions, and more.
 
 Leave Request Management: Review and manage employee leave requests with the ability to accept, reject, or mark as pending.
@@ -44,6 +46,8 @@ Employee-Specific Features: -
 Employee Homepage: Tailored for employees to respond to surveys, apply for leaves, access FAQ, and enroll in courses.
 
 Responsive Navigation: Slide through navigation buttons to swiftly access various employee features.
+
+My Account: - You can view your own details.
 
 Leave Application: Request leave using a dual calendar selection system and upload supporting documents if necessary.
 
