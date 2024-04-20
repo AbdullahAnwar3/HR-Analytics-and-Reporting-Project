@@ -65,13 +65,20 @@ Employee Login:
 For a hands-on experience, please use the above credentials to log in as an admin or as employee.
 
 
+
 Technology Stack: -
 
+
 Frontend: React.js
+
 Styling: Bootstrap, SweetAlert 
+
 Backend: Node.js, Express.js
+
 Database: MongoDB
+
 Real-Time Communication: socket.io
+
 Deployment: Vercel
 
 
