@@ -57,7 +57,7 @@ To access the application, use the following credentials:
 Admin Login:
   - Email: 25100100@lums.edu.pk
   - Password: Hassan123!
-  - 
+    
 Employee Login:
   - Email: zain@gmail.com
   - Password: hassan
