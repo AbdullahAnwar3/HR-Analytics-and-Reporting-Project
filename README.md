@@ -18,14 +18,14 @@ Authentication: Secure login process ensuring proper access control.
 
 Logout Functionality: Safe and secure logout option with confirmation prompt.
 
-Dual Dashboard Access: -
-HR Admin Dashboard: Customized for HR administrators to oversee and manage HR functions, including survey distribution, leave approvals, employee analytics, and course management.
-Employee Dashboard: Tailored for employees to respond to surveys, apply for leaves, access FAQ, and enroll in courses.
 
 
 
 Admin-Specific Features: -
 
+HR Admin Homepage: Customized for HR administrators to oversee and manage HR functions, including survey distribution, leave approvals, employee analytics, and course management.
+
+Responsive Navigation: Slide through navigation buttons to swiftly access various admin features.
 
 Leave Request Management: Review and manage employee leave requests with the ability to accept, reject, or mark as pending.
 
@@ -39,6 +39,9 @@ FAQ Curation: Populate the FAQ section with relevant questions and answers for e
 
 Employee-Specific Features: -
 
+Employee Homepage: Tailored for employees to respond to surveys, apply for leaves, access FAQ, and enroll in courses.
+
+Responsive Navigation: Slide through navigation buttons to swiftly access various employee features.
 
 Leave Application: Request leave using a dual calendar selection system and upload supporting documents if necessary.
 
