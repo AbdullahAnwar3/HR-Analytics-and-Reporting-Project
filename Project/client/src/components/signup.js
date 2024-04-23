@@ -78,8 +78,6 @@ const SignUp = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -90,7 +88,8 @@ const SignUp = (prop)=>{
             setError('You are not an admin');
             return;
         }
-
+        
+        setIsLoading(true);
         setEmailError('');
         setSalaryError('');
         setOccupationError('');
@@ -147,7 +146,7 @@ const SignUp = (prop)=>{
                 if (resultJson.errorList.occupation)
                 {
                     setOccupationError(resultJson.errorList.occupation);
-                    setOccupationErrorClass('radio-option-error')
+                    setOccupationErrorClass('radio-option-error');
                 }
 
                 if (resultJson.errorList.department)
