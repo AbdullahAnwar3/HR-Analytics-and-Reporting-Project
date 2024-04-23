@@ -149,8 +149,6 @@ const ApplyLeave = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -159,6 +157,23 @@ const ApplyLeave = (prop)=>{
         else if(userAccount.occupation !== 'employee')
         {
             setError('You are not an employee');
+            return;
+        }
+
+        setIsLoading(true);
+
+        if((!startDate || !endDate) || (!description || description.trim().length === 0)){
+            setBlankFields([]);
+            setError('Please fill out all the required fields');
+            let emptyfields = []
+            if(!startDate || !endDate){
+                emptyfields.push('Date');
+            }
+            if(!description || description.trim().length === 0){
+                emptyfields.push('Description');
+            }
+            setBlankFields(emptyfields);
+            setIsLoading(false);
             return;
         }
 
