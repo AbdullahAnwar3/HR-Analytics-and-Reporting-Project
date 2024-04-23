@@ -175,6 +175,22 @@ const Login = (prop)=>{
     
         setIsLoading(true);
 
+        setError('');
+        if(!email || !password){
+            setBlankFields([]);
+            setError('Please fill out all the fields');
+            let emptyfields = []
+            if(!email){
+                emptyfields.push('Email');
+            }
+            if(!password){
+                emptyfields.push('Password');
+            }
+            setBlankFields(emptyfields);
+            setIsLoading(false);
+            return;
+        }
+
         const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/login/', {
             method: 'POST',
             body: JSON.stringify({email, password}),
