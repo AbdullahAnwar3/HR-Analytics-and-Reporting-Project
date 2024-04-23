@@ -106,6 +106,7 @@ const FaqsManage = (prop)=>{
         }
 
         setIsLoading(true);
+        
         if((!question || question.trim().length === 0) || (!answer || answer.trim().length === 0)){
             setBlankFields([]);
             setError('Please fill out all the fields');
