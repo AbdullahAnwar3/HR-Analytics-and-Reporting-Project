@@ -77,7 +77,6 @@ const FaqsManage = (prop)=>{
     }, [userAccount]);
 
     useEffect(()=>{
-        console.log('faqsManagement Socket');
         socket.on('faqs-update', (newFaqsAll)=>{
             setFaqs(newFaqsAll);
             if(newFaqsAll.length === 0){
@@ -95,8 +94,6 @@ const FaqsManage = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -105,6 +102,22 @@ const FaqsManage = (prop)=>{
         else if(userAccount.occupation !== 'admin')
         {
             setError('You are not an admin');
+            return;
+        }
+
+        setIsLoading(true);
+        if(!question || !answer){
+            setBlankFields([]);
+            setError('Please fill out all the fields');
+            let emptyfields = []
+            if(!question || (question && !question.trim())){
+                emptyfields.push('Question');
+            }
+            if(!answer || (answer && !answer.trim())){
+                emptyfields.push('Answer');
+            }
+            setBlankFields(emptyfields);
+            setIsLoading(false);
             return;
         }
 
