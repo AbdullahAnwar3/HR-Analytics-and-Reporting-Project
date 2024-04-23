@@ -1,9 +1,6 @@
 const Faqs = require('../models/faqsData');
 const mongoose = require('mongoose');
 
-// Importing socket.io object
-const main = require('../index');
-
 // GET all faqs
 const getAllFaqs = async (req, res) => {
     try{
@@ -32,18 +29,8 @@ const addFaq = async (req, res) => {
     }
 
     try{
-        const faqs = await Faqs.create({question, answer});
-
-        try{
-            const allFaqs = await Faqs.find({}).sort({createdAt: -1});
-            main.io.emit('faqs-update', allFaqs);
-        }
-        catch (error){
-            return res.status(400).json({error : 'Faq added but socket error occured'});
-        }
-
-        res.status(200).json({mssg : 'Faq has been added'});
-
+        const faq = await Faqs.create({question, answer});
+        res.status(200).json(faq);
     }
     catch (error){
         res.status(400).json({error : error.message});
@@ -61,17 +48,7 @@ const deleteFaq = async (req, res) => {
     try{
         const faq = await Faqs.findByIdAndDelete({_id: id});
         if (faq)
-        {
-            try{
-                const allFaqs = await Faqs.find({}).sort({createdAt: -1});
-                main.io.emit('faqs-update', allFaqs);
-            }
-            catch (error){
-                return res.status(400).json({error : 'Faq deleted but socket error occured'});
-            }
-    
-            res.status(200).json({mssg : 'Faq has been deleted'});
-        }
+            res.status(200).json(faq);
         else
             res.status(404).json({error : 'No such faq exists in the database'});    
     }
