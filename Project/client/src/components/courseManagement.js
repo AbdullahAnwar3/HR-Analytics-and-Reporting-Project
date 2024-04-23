@@ -19,12 +19,6 @@ import LoadingIcon from "./SharedComponents/loading";
 // Importing Alerts
 import Swal from "sweetalert2";
 
-//Importing socket.io
-import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
-    reconnection: true
-})
-
 const CoursesManage = (prop)=>{
     
     // userAccount object stores the current state including email, occupation, jwt
@@ -73,19 +67,6 @@ const CoursesManage = (prop)=>{
             fetchCourses();
             
     }, [userAccount]);
-
-    useEffect(()=>{
-        socket.on('courses-update', (newCourseAll)=>{
-            setCourses(newCourseAll);
-            if(newCourseAll.length === 0){
-                setExist(false);
-            }
-            else{
-                setExist(true);
-            }
-        })
-
-    }, []);
 
     const handleNewCourse = async (e) => {
 
