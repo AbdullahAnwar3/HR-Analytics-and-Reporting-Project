@@ -159,9 +159,10 @@ const MyAccount = (prop)=>{
         if(genderNew && genderNew !== gender){updateList.gender=genderNew}
         if(residenceNew && residenceNew !== residence){updateList.residence=residenceNew}
 
-        if(!updateList)
+        if(Object.keys(updateList).length === 0)
         {
             setBasicInfoError('No fields to update');
+            setUpdatingBasicInfo(false);
             return;
         }
 
