@@ -28,7 +28,6 @@
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    max-width: 350px;
 }
 
 .login-heading{
@@ -140,22 +139,8 @@ label{
     border: 1px solid #D63301 !important;
 }
 
-
-
-@media only screen and (max-width: 350px){
-   
-    .login-form input{
-        width: 200px;
-        height: 40px;
+@media only screen and (max-width: 500px){
+    .login-form input, .login-btn-submit, .login-error {
+        width: max(calc(100vw - 80px));
     }
-
-    .login-btn-submit{
-        width: 200px;
-        height: 40px;
-    }
-
-    .login-error{
-        width: 200px;
-    }
-
 }
