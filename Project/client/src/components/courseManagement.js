@@ -218,6 +218,14 @@ const CoursesManage = (prop)=>{
 
         const resultJson = await result.json();
 
+        let updatedCourses = [];
+        for (let i = 0; i < courses.length; i++){
+            if(courses[i]._id !== id){
+                updatedCourses.push(courses[i]);
+            }
+        }
+        setCourses(updatedCourses);
+
         if (result.ok)
         {
             console.log("Course deleted: ",resultJson);
@@ -228,7 +236,7 @@ const CoursesManage = (prop)=>{
         }
         else
         {
-            console.log(resultJson.error)
+            console.log(resultJson.error);
         }
     }
 
