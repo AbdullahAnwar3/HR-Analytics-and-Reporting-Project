@@ -106,14 +106,14 @@ const FaqsManage = (prop)=>{
         }
 
         setIsLoading(true);
-        if(!question || !answer){
+        if((!question || question.trim().length === 0) || (!answer || answer.trim().length === 0)){
             setBlankFields([]);
             setError('Please fill out all the fields');
             let emptyfields = []
-            if(!question || (question && !question.trim())){
+            if(!question || question.trim().length === 0){
                 emptyfields.push('Question');
             }
-            if(!answer || (answer && !answer.trim())){
+            if(!answer || answer.trim().length === 0){
                 emptyfields.push('Answer');
             }
             setBlankFields(emptyfields);
