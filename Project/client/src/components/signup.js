@@ -17,6 +17,9 @@ import NavMenu from "./SharedComponents/navMenu";
 // Importing Alerts
 import Swal from "sweetalert2";
 
+// Loading slider
+import { BarLoader } from "react-spinners";
+
 const SignUp = (prop)=>{
 
     // userAccount object stores the current state including email, occupation, jwt
@@ -229,7 +232,7 @@ const SignUp = (prop)=>{
                     </div>
                     <button disabled={isLoading} className="signup-btn-submit">
                         {
-                            !isLoading ? 'Create' : 'Loading...'
+                            !isLoading ? 'Create' : <BarLoader size={20} color="white"  />
                         }
                     </button>
                     {error && <div className="signup-error">{error}</div>}
