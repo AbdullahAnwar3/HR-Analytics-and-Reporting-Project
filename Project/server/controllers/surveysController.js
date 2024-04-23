@@ -1,9 +1,6 @@
 const Survey = require('../models/surveysData');
 const mongoose = require('mongoose');
 
-// Importing socket.io object
-const main = require('../index');
-
 // GET all surveys
 const getSurveys = async (req, res) => {
     try{
@@ -34,16 +31,7 @@ const addSurvey = async (req, res) => {
 
     try{
         const survey = await Survey.create({title, description, visibility : 'true'});
-
-        try{
-            const allSurveys = await Survey.find({}).sort({createdAt: -1});
-            main.io.emit('surveys-update', allSurveys);
-        }
-        catch (error){
-            return res.status(400).json({error : 'Survey added but socket error occured'});
-        }
-
-        res.status(200).json({mssg : 'Survey has been added'});
+        res.status(200).json(survey);
     }
     catch (error){
         res.status(400).json({error : error.message});
@@ -73,15 +61,8 @@ const addComment = async (req, res) => {
         const survey = await Survey.findOneAndUpdate({_id: id},{ $push: { responses: response_append } } );
         if (survey)
         {
-            try{
-                const allSurveys = await Survey.find({}).sort({createdAt: -1});
-                main.io.emit('surveys-update', allSurveys);
-            }
-            catch (error){
-                return res.status(400).json({error : 'Comment added but socket error occured'});
-            }
-    
-            res.status(200).json({mssg : 'Comment added'});
+            const comment = await Survey.findOne({_id: id});
+            res.status(200).json(comment);
         }
         else
             res.status(404).json({error : 'No such survey exists in the database'});
@@ -102,18 +83,7 @@ const deleteSurvey = async (req, res) => {
     try{
         const survey = await Survey.findByIdAndDelete({_id: id});
         if (survey)
-        {
-            try{
-
-                const allSurveys = await Survey.find({}).sort({createdAt: -1});
-                main.io.emit('surveys-update', allSurveys);
-            }
-            catch (error){
-                return res.status(400).json({error : 'Survey deleted but socket error occured', errorFields});
-            }
-    
-            res.status(200).json({mssg : 'Survey has been deleted'});
-        }
+            res.status(200).json(survey);
         else
             res.status(404).json({error : 'No such survey exists in the database'});
     }
