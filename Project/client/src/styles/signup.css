@@ -7,7 +7,7 @@
 }
 
 .signup-form{
-    margin: 10px;
+    margin: 10px 20px;
     padding: 20px;
     border-radius: 7px;
     background-color: white;
@@ -242,6 +242,11 @@
         flex-flow: column wrap;
         justify-content: flex-start;
         align-items: center;
+        gap: 0; 
+    }
+
+    .signup-form input, .dep-drop, .signup-date-unit{
+        width: max(calc(100vw - 100px));
     }
 
     .signup-heading{
@@ -256,5 +261,4 @@
         margin: 1em 0 1em 0;
     }
     
-
 }
