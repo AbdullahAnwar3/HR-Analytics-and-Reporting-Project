@@ -75,7 +75,6 @@ const CoursesManage = (prop)=>{
     }, [userAccount]);
 
     useEffect(()=>{
-        console.log('courseManagement Socket');
         socket.on('courses-update', (newCourseAll)=>{
             setCourses(newCourseAll);
             if(newCourseAll.length === 0){
@@ -93,8 +92,6 @@ const CoursesManage = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -106,6 +103,42 @@ const CoursesManage = (prop)=>{
             return;
         }
 
+        setIsLoading(true);
+        if((!title || title.trim().length === 0) || (!description || description.trim().length === 0) || (!website || website.trim().length === 0)){
+            setBlankFields([]);
+            setError('Please fill out all the fields');
+            let emptyfields = []
+            if(!title || (title && !title.trim())){
+                emptyfields.push('Title');
+            }
+            if(!description || (description && !description.trim())){
+                emptyfields.push('Description');
+            }
+            if(!website || website.trim().length === 0){
+                emptyfields.push('Url');
+            }
+            setBlankFields(emptyfields);
+            setIsLoading(false);
+            return;
+        }
+
+        function isValidUrl(input) {
+            try {
+                new URL(input);
+                return true;
+            }
+            catch (error) {
+                return false;
+            }
+        }
+
+        if(!isValidUrl(website)){
+            setError('Invalid course link provided');
+            setBlankFields(['Url']);
+            setIsLoading(false);
+            return;
+        }
+        
         const newCourse = {title, description, website};
 
         const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/courses/', {
