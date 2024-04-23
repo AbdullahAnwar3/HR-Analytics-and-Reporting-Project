@@ -427,6 +427,16 @@ const Surveys = (prop)=>{
             setComment('');
             setCommentError('');
             setCommentBlank([]);
+            
+            let updatedSurveys = [];
+            for (let i = 0; i < surveys.length; i++){
+            if(surveys[i]._id !== surveyId){
+                updatedSurveys.push(surveys[i]);
+            }
+            else{
+                updatedSurveys.push(resultJson);
+            }
+            setSurveys(updatedSurveys);
             setIsLoading(false);
         }
         else{
