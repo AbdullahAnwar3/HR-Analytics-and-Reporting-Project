@@ -356,9 +356,9 @@ const Login = (prop)=>{
                             {residenceError && <div className="error-text">{residenceError}</div>}
                         </div>
                         <button disabled={isLoading} className="signup-btn-submit signup-btn">
-                            {
-                                !isLoading ? 'Save' : 'Loading...'
-                            }
+                        {
+                            !isLoading ? 'Save' : <BarLoader size={20} color="white"  />
+                        }
                         </button>
                     </div>
                     {error && <div className="signup-error">{error}</div>}
