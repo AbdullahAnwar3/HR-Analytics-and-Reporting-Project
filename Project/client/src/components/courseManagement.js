@@ -104,14 +104,15 @@ const CoursesManage = (prop)=>{
         }
 
         setIsLoading(true);
+        
         if((!title || title.trim().length === 0) || (!description || description.trim().length === 0) || (!website || website.trim().length === 0)){
             setBlankFields([]);
             setError('Please fill out all the fields');
             let emptyfields = []
-            if(!title || (title && !title.trim())){
+            if(!title || (title && title.trim().length === 0)){
                 emptyfields.push('Title');
             }
-            if(!description || (description && !description.trim())){
+            if(!description || !description.trim().length === 0){
                 emptyfields.push('Description');
             }
             if(!website || website.trim().length === 0){
