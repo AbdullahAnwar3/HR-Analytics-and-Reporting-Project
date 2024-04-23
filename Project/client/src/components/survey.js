@@ -408,7 +408,7 @@ const Surveys = (prop)=>{
 
         setIsLoading(true);
 
-        if(!comment){
+        if(!comment || (comment && !comment.trim())){
             setCommentError('Please fill out the comment field');
             setCommentBlank(['Response']);
             setIsLoading(false);
