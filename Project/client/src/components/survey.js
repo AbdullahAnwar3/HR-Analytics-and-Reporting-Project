@@ -162,10 +162,10 @@ const Surveys = (prop)=>{
             setBlankFields([]);
             setError('Please fill out all the fields');
             let emptyfields = []
-            if(!title){
+            if(!title || (title && !title.trim())){
                 emptyfields.push('Title');
             }
-            if(!description){
+            if(!description || (description && !description.trim())){
                 emptyfields.push('Description');
             }
             setBlankFields(emptyfields);
