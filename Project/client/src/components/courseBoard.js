@@ -16,12 +16,6 @@ import no_record_icon from './Images/Record/no-record-img.png'
 import NavMenu from "./SharedComponents/navMenu";
 import LoadingIcon from "./SharedComponents/loading";
 
-//Importing socket.io
-import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
-    reconnection: true
-})
-
 const CoursesBoard = (prop)=>{
 
     // userAccount object stores the current state including email, occupation, jwt
@@ -62,20 +56,6 @@ const CoursesBoard = (prop)=>{
             fetchCourses();
 
     }, [userAccount])
-
-    useEffect(()=>{
-        console.log('courseBoard Socket');
-        socket.on('courses-update', (newCourseAll)=>{
-            setCourses(newCourseAll);
-            if(newCourseAll.length === 0){
-                setExist(false);
-            }
-            else{
-                setExist(true);
-            }
-        })
-
-    }, []);
 
     return (   
         <div className="coursespage">
