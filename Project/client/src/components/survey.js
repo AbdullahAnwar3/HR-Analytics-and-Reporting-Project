@@ -146,8 +146,6 @@ const Surveys = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -156,6 +154,23 @@ const Surveys = (prop)=>{
         else if(userAccount.occupation !== 'admin')
         {
             setError('You are not an admin');
+            return;
+        }
+
+        setIsLoading(true);
+
+        if(!title || !description){
+            setBlankFields([]);
+            setError('Please fill out all the fields');
+            let emptyfields = []
+            if(!title){
+                emptyfields.push('Title');
+            }
+            if(!description){
+                emptyfields.push('Description');
+            }
+            setBlankFields(emptyfields);
+            setIsLoading(false);
             return;
         }
 
