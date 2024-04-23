@@ -246,7 +246,7 @@
     }
 
     .signup-form input, .dep-drop, .signup-date-unit{
-        width: max(calc(100vw - 100px), 150px);
+        width: max(calc(100vw - 80px), 150px);
     }
 
     .signup-heading{
