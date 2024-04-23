@@ -215,7 +215,7 @@ const Surveys = (prop)=>{
         let updatedSurveys = [];
         for (let i = 0; i < surveys.length; i++){
             if(surveys[i]._id !== id){
-                surveys.push(surveys[i]);
+                updatedSurveys.push(surveys[i]);
             }
         }
         setSurveys(updatedSurveys);
