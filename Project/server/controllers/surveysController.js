@@ -103,17 +103,7 @@ const surveyVisibility = async (req, res) => {
     try{
         const survey = await Survey.findOneAndUpdate({_id: id}, {...req.body});
         if (survey)
-        {
-            try{
-                const allSurveys = await Survey.find({}).sort({createdAt: -1});
-                main.io.emit('surveys-update', allSurveys);
-            }
-            catch (error){
-                return res.status(400).json({error : 'Survey updated but socket error occured', errorFields});
-            }
-    
             res.status(200).json({mssg : 'Survey updated'});
-        }
         else
             res.status(404).json({error : 'No such survey exists in the database'});
     }
