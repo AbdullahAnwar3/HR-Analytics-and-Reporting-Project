@@ -20,12 +20,6 @@ import LoadingIcon from "./SharedComponents/loading";
 // Importing Alerts
 import Swal from "sweetalert2";
 
-//Importing socket.io
-import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
-    reconnection: true
-})
-
 const Surveys = (prop)=>{
     
     // userAccount object stores the current state including email, occupation, jwt
@@ -107,38 +101,6 @@ const Surveys = (prop)=>{
             fetchSurveys();
             
     }, [userAccount]);
-
-    useEffect(()=>{
-        socket.on('surveys-update', (newSurveyAll)=>{
-            if(userAccount.occupation === 'admin')
-            {
-                setSurveys(newSurveyAll);
-                if(newSurveyAll.length === 0){
-                    setExist(false);
-                }
-                else{
-                    setExist(true);
-                }
-            }
-            else
-            {
-                let visibleSurveys = [];
-                for(let i=0; i < newSurveyAll.length; i++)
-                {
-                    if(newSurveyAll[i].visibility === 'true')
-                        visibleSurveys.push(newSurveyAll[i]);
-                }
-                setSurveys(visibleSurveys);
-                if(visibleSurveys.length === 0){
-                    setExist(false);
-                }
-                else{
-                    setExist(true);
-                }
-            }
-        })
-
-    }, []);
 
     const handleNewSurvey = async (e) => {
 
