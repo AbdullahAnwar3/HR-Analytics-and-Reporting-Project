@@ -269,6 +269,19 @@ const Surveys = (prop)=>{
 
         const resultJson = await result.json();
 
+        let updatedSurveys = [];
+        for (let i = 0; i < surveys.length; i++){
+            if(surveys[i]._id !== id){
+                updatedSurveys.push(surveys[i]);
+            }
+            else{
+                let updatedSurvey = surveys[i];
+                updatedSurvey.visibility = 'true';
+                updatedSurveys.push(updatedSurvey);
+            }
+        }
+        setSurveys(updatedSurveys);
+
         if (result.ok)
         {
             console.log("Survey visible: ",resultJson);
@@ -317,7 +330,20 @@ const Surveys = (prop)=>{
         })
 
         const resultJson = await result.json();
-
+        
+        let updatedSurveys = [];
+        for (let i = 0; i < surveys.length; i++){
+            if(surveys[i]._id !== id){
+                updatedSurveys.push(surveys[i]);
+            }
+            else{
+                let updatedSurvey = surveys[i];
+                updatedSurvey.visibility = 'false';
+                updatedSurveys.push(updatedSurvey);
+            }
+        }
+        setSurveys(updatedSurveys);
+        
         if (result.ok)
         {
             console.log("Survey visible: ",resultJson);
