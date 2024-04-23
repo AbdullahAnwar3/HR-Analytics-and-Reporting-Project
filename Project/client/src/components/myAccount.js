@@ -159,6 +159,12 @@ const MyAccount = (prop)=>{
         if(genderNew && genderNew !== gender){updateList.gender=genderNew}
         if(residenceNew && residenceNew !== residence){updateList.residence=residenceNew}
 
+        if(!updateList)
+        {
+            setBasicInfoError('No fields to update');
+            return;
+        }
+
         const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/info', {
             method: 'PATCH',
             body: JSON.stringify({...updateList}),
