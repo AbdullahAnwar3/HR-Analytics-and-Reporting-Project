@@ -21,6 +21,9 @@ import { FaAngleDown } from "react-icons/fa6";
 import {DatePicker} from "antd";
 import moment from 'moment';
 
+// Loading slider
+import { BarLoader } from "react-spinners";
+
 const Login = (prop)=>{
 
     const {dispatch} = useAuthorize();
@@ -271,7 +274,7 @@ const Login = (prop)=>{
                     </div>
                     <button disabled={isLoading} type="submit" className="login-btn-submit">
                         {
-                            !isLoading ? 'Login' : 'Loading...'
+                            !isLoading ? 'Login' : <BarLoader size={20} color="white"  />
                         }
                     </button>
                     {error && <div className="login-error">{error}</div>}
