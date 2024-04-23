@@ -160,6 +160,7 @@ const Surveys = (prop)=>{
                 title: "New Survey Added!",
                 confirmButtonColor: "#1d578a",
             });
+            setSurveys(surveys => [resultJson, ...surveys]);
             setIsLoading(false);
         }
         else
@@ -211,6 +212,14 @@ const Surveys = (prop)=>{
 
         const resultJson = await result.json();
 
+        let updatedSurveys = [];
+        for (let i = 0; i < surveys.length; i++){
+            if(surveys[i]._id !== id){
+                surveys.push(surveys[i]);
+            }
+        }
+        setSurveys(updatedSurveys);
+        
         if (result.ok)
         {
             console.log("Survey deleted: ",resultJson);
