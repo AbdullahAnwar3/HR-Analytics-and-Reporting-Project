@@ -21,12 +21,6 @@ import LoadingIcon from "./SharedComponents/loading";
 // Importing Alerts
 import Swal from "sweetalert2";
 
-//Importing socket.io
-import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
-    reconnection: true
-})
-
 const FaqsManage = (prop)=>{
     
     // userAccount object stores the current state including email, occupation, jwt
@@ -75,19 +69,6 @@ const FaqsManage = (prop)=>{
             fetchFaqs();
             
     }, [userAccount]);
-
-    useEffect(()=>{
-        socket.on('faqs-update', (newFaqsAll)=>{
-            setFaqs(newFaqsAll);
-            if(newFaqsAll.length === 0){
-                setExist(false);
-            }
-            else{
-                setExist(true);
-            }
-        })
-
-    }, []);
 
     const handleNewFaq = async (e) => {
 
@@ -146,6 +127,7 @@ const FaqsManage = (prop)=>{
                 title: "New Faq Added!",
                 confirmButtonColor: "#1d578a",
             });
+            setFaqs(faqs => [resultJson, ...faqs]);
             setIsLoading(false);
         }
         else
@@ -197,6 +179,14 @@ const FaqsManage = (prop)=>{
 
         const resultJson = await result.json();
 
+        let updatedFaqs = [];
+        for (let i = 0; i < faqs.length; i++){
+            if(faqs[i]._id !== id){
+                updatedFaqs.push(faqs[i]);
+            }
+        }
+        setFaqs(updatedFaqs);
+        
         if (result.ok)
         {
             console.log("faq deleted: ",resultJson);
