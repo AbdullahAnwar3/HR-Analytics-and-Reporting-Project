@@ -139,7 +139,7 @@ label{
     border: 1px solid #D63301 !important;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
     .login-form input, .login-btn-submit, .login-error {
         width: max(calc(100vw - 80px));
     }
