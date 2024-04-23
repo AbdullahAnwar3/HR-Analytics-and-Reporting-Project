@@ -17,12 +17,6 @@ import {format} from "date-fns";
 import NavMenu from "./SharedComponents/navMenu";
 import LoadingIcon from "./SharedComponents/loading";
 
-//Importing socket.io
-import {io} from 'socket.io-client';
-const socket = io('https://hr-analytics-and-reporting-project.vercel.app',{
-    reconnection: true
-})
-
 const FaqsBoard = (prop)=>{
     
     // userAccount object stores the current state including email, occupation, jwt
@@ -64,20 +58,6 @@ const FaqsBoard = (prop)=>{
             fetchFaqs();
             
     }, [userAccount]);
-
-    useEffect(()=>{
-        console.log('faqsBoard Socket');
-        socket.on('faqs-update', (newFaqsAll)=>{
-            setFaqs(newFaqsAll);
-            if(newFaqsAll.length === 0){
-                setExist(false);
-            }
-            else{
-                setExist(true);
-            }
-        })
-
-    }, []);
 
     return (   
         <div className="faqspage">
