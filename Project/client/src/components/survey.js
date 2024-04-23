@@ -109,7 +109,6 @@ const Surveys = (prop)=>{
     }, [userAccount]);
 
     useEffect(()=>{
-        console.log('surveyManagement Socket');
         socket.on('surveys-update', (newSurveyAll)=>{
             if(userAccount.occupation === 'admin')
             {
@@ -396,8 +395,6 @@ const Surveys = (prop)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        setIsLoading(true);
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -406,6 +403,15 @@ const Surveys = (prop)=>{
         else if(userAccount.occupation !== 'employee')
         {
             setError('You are not an employee');
+            return;
+        }
+
+        setIsLoading(true);
+
+        if(!comment){
+            setCommentError('Please fill out the comment field');
+            setCommentBlank(['Response']);
+            setIsLoading(false);
             return;
         }
 
