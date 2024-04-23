@@ -479,6 +479,11 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 900px){
+
+    .leave-add-form{
+        width: min(calc(100vw - 100px), 530px);
+    }
+
     
     .leave-management{
         display: flex;
