@@ -166,6 +166,7 @@ const CoursesManage = (prop)=>{
                 title: "New Course Added!",
                 confirmButtonColor: "#1d578a",
             });
+            setLeaves(courses => [resultJson, ...courses]);
             setIsLoading(false);
         }
         else
