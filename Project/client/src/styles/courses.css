@@ -21,6 +21,7 @@
     font-size: xx-large;
     margin-top: 10px;
     color: #3c5267;
+    text-align: center;
 }
 
 .course-form-unit{
@@ -48,8 +49,7 @@ label{
 .course-add-form input{
     margin: 0;
     padding: 0 10px;
-    max-width: 265px;
-    min-width: 150px;
+    width: 270px;
 	height: 40px;
     box-sizing: border-box;
 	border-radius: 3px;
@@ -256,7 +256,7 @@ label{
     background-color: rgb(238, 238, 238);
 }
 
-@media only screen and (max-width: 740px){
+@media only screen and (max-width: 800px){
     
     .course-management{
         display: flex;
@@ -281,4 +281,11 @@ label{
         margin-top: 100px;
     }
     
+}
+
+@media only screen and (max-width: 310px){
+    .course-add-form input{
+        width: 100%
+    }
+
 }
