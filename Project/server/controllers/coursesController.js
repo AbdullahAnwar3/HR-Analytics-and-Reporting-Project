@@ -2,9 +2,6 @@ const Course = require('../models/coursesData');
 const mongoose = require('mongoose');
 const urlValidation  = require('url-validation');
 
-// Importing socket.io object
-const main = require('../index');
-
 // GET all courses
 const getAllCourses = async (req, res) => {
     try{
@@ -43,17 +40,7 @@ const addCourse = async (req, res) => {
 
     try{
         const course = await Course.create({title, description, website});
-
-        try{
-            const allCourses = await Course.find({}).sort({createdAt: -1});
-            main.io.emit('courses-update', allCourses);
-
-        }
-        catch (error){
-            return res.status(400).json({error : 'Course added but socket error occured'});
-        }
-
-        res.status(200).json({mssg : 'Course has been added'});
+        res.status(200).json(course);
     }
     catch (error){
         res.status(400).json({error : error.message});
@@ -72,15 +59,7 @@ const deleteCourse = async (req, res) => {
         const course = await Course.findByIdAndDelete({_id: id});
         if (course)
         {
-            try{
-                const allCourses = await Course.find({}).sort({createdAt: -1});
-                main.io.emit('courses-update', allCourses);
-            }
-            catch (error){
-                return res.status(400).json({error : 'Course deleted but socket error occured', errorFields});
-            }
-    
-            res.status(200).json({mssg : 'Course has been deleted'});
+            res.status(200).json(course);
         }
         else
             res.status(404).json({error : 'No such course exists in the database'});
