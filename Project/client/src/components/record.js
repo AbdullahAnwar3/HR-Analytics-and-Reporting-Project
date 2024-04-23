@@ -117,8 +117,6 @@ const Record = (props)=>{
         // Prevents default action of page refresh on form submission
         e.preventDefault();
 
-        console.log('Updating......')
-
         if(!userAccount)
         {
             setError('You are not logged in');
@@ -135,6 +133,12 @@ const Record = (props)=>{
         let updateList = {email : employeeEmail};
         if(salaryNew){updateList.salary=salaryNew}
         if(departmentNew){updateList.department=departmentNew}
+        
+        if(!salaryNew && !departmentNew){
+            setError('No fields to update');
+            setUpdating(false);
+            return;
+        }
 
         const result = await fetch('https://hr-analytics-and-reporting-project.vercel.app/api/account/sensitive', {
             method: 'PATCH',
