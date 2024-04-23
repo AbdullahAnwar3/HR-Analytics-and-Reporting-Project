@@ -157,15 +157,14 @@ const Surveys = (prop)=>{
         }
 
         setIsLoading(true);
-
-        if(!title || !description){
+        if((!title || title.trim().length === 0) || (!description || description.trim().length === 0)){
             setBlankFields([]);
             setError('Please fill out all the fields');
             let emptyfields = []
-            if(!title || (title && !title.trim())){
+            if(!title || !title.trim()){
                 emptyfields.push('Title');
             }
-            if(!description || (description && !description.trim())){
+            if(!description || !description.trim()){
                 emptyfields.push('Description');
             }
             setBlankFields(emptyfields);
