@@ -20,7 +20,7 @@
 }
 
 .login-form{
-    margin: 10px;
+    margin: 10px 20px;
     padding: 20px;
     border-radius: 7px;
     background-color: white;
@@ -50,12 +50,6 @@ label{
     line-height: 20px;
     color: rgba(0, 0, 0, 0.8);
 }
-
-/* .form-required{
-    color: red;
-    margin: 0;
-    padding: 0;
-} */
 
 .login-form input{
     margin: 0;
@@ -110,7 +104,10 @@ label{
     width: 300px;
 	height: 40px;
     cursor: pointer;
-    transition: all 0.5s
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
 }
 
 .login-btn-submit:hover{
@@ -138,6 +135,7 @@ label{
 .empty-error{
     border: 1px solid #D63301 !important;
 }
+
 
 @media only screen and (max-width: 600px){
     .login-form input, .login-btn-submit, .login-error {
