@@ -23,6 +23,9 @@ import {convertToBase64, downloadBase64, validateFile} from "./SharedComponents/
 // Importing Alerts
 import Swal from "sweetalert2";
 
+// Loading slider
+import { BarLoader } from "react-spinners";
+
 // Date formatting and antd components
 import {format, formatDistanceToNow} from "date-fns";
 import {DatePicker} from "antd";
@@ -277,7 +280,7 @@ const ApplyLeave = (prop)=>{
                             </div>
                             <button disabled={isLoading} type="submit" className="leave-btn-submit">
                                 {
-                                    !isLoading ? 'Add Request' : 'Loading...'
+                                    !isLoading ? 'Add Request' : <BarLoader size={20} color="white"  />
                                 }
                             </button>
                             {error && <div className="leave-submit-error">{error}</div>}
