@@ -451,7 +451,7 @@
 
     .password-rules-wrapper{
         margin: 0 0 26px 0;
-        width: calc(100% - 20px);
+        width: max(calc(100vw - 120px), 130px);
     }
 
     .password-form-unit, .password-tag-wrapper{
