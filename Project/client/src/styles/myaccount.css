@@ -182,11 +182,11 @@
     }
 
     .account-summary{
-        width: max(calc(100vw - 100px), 150px);
+        width: max(calc(100vw - 80px), 150px);
     }
 
     .account-options-unit, .employee-record-form{
-        width: max(calc(100vw - 100px), 150px);
+        width: max(calc(100vw - 80px), 150px);
         min-height: auto;
     }
 }
@@ -451,11 +451,11 @@
 
     .password-rules-wrapper{
         margin: 0 0 26px 0;
-        width: max(calc(100vw - 120px), 130px);
+        width: max(calc(100vw - 100px), 130px);
     }
 
     .password-form-unit, .password-tag-wrapper{
-        width: max(calc(100vw - 100px), 150px);
+        width: max(calc(100vw - 80px), 150px);
     }
 }
 
