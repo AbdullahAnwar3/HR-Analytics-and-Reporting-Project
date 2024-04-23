@@ -58,9 +58,7 @@ const deleteCourse = async (req, res) => {
     try{
         const course = await Course.findByIdAndDelete({_id: id});
         if (course)
-        {
             res.status(200).json(course);
-        }
         else
             res.status(404).json({error : 'No such course exists in the database'});
     }
