@@ -280,7 +280,7 @@ const ApplyLeave = (prop)=>{
                             </div>
                             <button disabled={isLoading} type="submit" className="leave-btn-submit">
                                 {
-                                    !isLoading ? 'Add Request' : <BarLoader size={20} color="white"  />
+                                    !isLoading ? 'Add Requests' : <BarLoader size={20} color="white"  />
                                 }
                             </button>
                             {error && <div className="leave-submit-error">{error}</div>}
