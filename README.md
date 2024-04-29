@@ -94,6 +94,7 @@ Deployment: Vercel
 
 --> Getting Started
 
+Project directory contains application deployed on vercel which does not supoort websockets. Project_local folder contains slightly different application which supports websockets.
 To run the application locally, follow these steps:
 
 1. Clone the repository:
